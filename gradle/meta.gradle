@@ -8,6 +8,7 @@ ext {
     meta.gitHubUsername = 'amaksoft'
     meta.gitHubFullname = 'Andrey Makeev'
     meta.gitHubUrl = "https://github.com/${meta.gitHubUsername}/${meta.pomArtifactId}"
+    meta.issueTracker = "https://github.com/${meta.gitHubUsername}/${meta.pomArtifactId}/issues"
     meta.pomName = meta.pomArtifactId
     meta.pomInceptionYear = '2016'
     meta.pomDescription = 'Gradle plugin to easily switch between local projects and remote artifacts of your libs.'
@@ -23,8 +24,11 @@ ext {
     meta.pomDeveloperUrl = "http://github.com/${meta.gitHubUsername}"
     meta.localRepositoryUrl = uri('.repo')
     meta.pluginVcsurl = "https://github.com/${meta.gitHubUsername}/${meta.pomArtifactId}.git"
-    meta.pluginTags = []
+    meta.pluginTags = ['debugging', 'elastic', 'dependencies']
     meta.gradlePluginId = 'com.github.amaksoft.elasticlibs'
     meta.propNameOssrhUsername = 'ossrhUsername'
     meta.propNameOssrhPassword = 'ossrhPassword'
+    meta.bintrayRepoName = 'maven'
+    meta.propNameBintrayUser = 'bintrayUser'
+    meta.propNameBintrayKey = 'bintrayKey'
 }

@@ -126,17 +126,44 @@ pluginBundle {
     website = meta.pomUrl
     vcsUrl = meta.pluginVcsurl
 
-    description = meta.pomDescription
-
     plugins {
         plugin {
             id = meta.gradlePluginId
             displayName = meta.pomName
+            description = meta.pomDescription
             tags = meta.pluginTags
+            version = meta.versionName
         }
     }
 
     mavenCoordinates {
         artifactId = meta.pomArtifactId
+    }
+}
+
+
+bintray {
+    // key and user must be in your ~/.gradle/gradle.properties
+    key          = hasProperty(meta.propNameBintrayKey) ? project.getProperty(meta.propNameBintrayKey) : ""
+    user         = hasProperty(meta.propNameBintrayUser) ? project.getProperty(meta.propNameBintrayUser) : ""
+    dryRun       = false
+    publish      = true
+    publications = [ 'mavenJava' ]
+    pkg {
+        repo            = 'maven'
+        name            = meta.pomName
+        desc            = meta.pomDescription
+        licenses        = meta.pomLicenseName
+        websiteUrl      = meta.gitHubUrl
+        vcsUrl          = meta.pluginVcsurl
+        issueTrackerUrl = meta.issueTracker
+        publicDownloadNumbers = true
+        version {
+            name       = meta.versionName
+            desc       = meta.pomDescription
+            attributes = [
+                'gradle-plugin': "${project.group}.${project.name - 'gradle-'}:${project.group}:${project.name}"
+            ]
+        }
     }
 }
