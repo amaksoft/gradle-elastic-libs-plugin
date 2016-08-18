@@ -1,0 +1,15 @@
+language: groovy
+
+jdk:
+  - openjdk7
+  - oraclejdk8
+
+branches:
+  only:
+    - master
+
+script:
+  - ./gradlew clean build check --full-stacktrace
+
+after_success:
+  - ./gradlew cobertura coveralls --full-stacktrace

@@ -1,0 +1,30 @@
+// TODO Configure following values to fit your plugin description.
+ext {
+    meta = [:]
+    meta.versionName = '0.0.1'
+    meta.group = 'com.github.amaksoft'
+    meta.pomArtifactId = 'gradle-elastic-libs-plugin'
+    meta.javaCompatibility = 1.7
+    meta.gitHubUsername = 'amaksoft'
+    meta.gitHubFullname = 'Andrey Makeev'
+    meta.gitHubUrl = "https://github.com/${meta.gitHubUsername}/${meta.pomArtifactId}"
+    meta.pomName = meta.pomArtifactId
+    meta.pomInceptionYear = '2016'
+    meta.pomDescription = 'Gradle plugin to easily switch between local projects and remote artifacts of your libs.'
+    meta.pomUrl = meta.gitHubUrl
+    meta.pomScmUrl = meta.gitHubUrl
+    meta.pomScmConnection = "scm:git@github.com/${meta.gitHubUsername}/${meta.pomArtifactId}.git"
+    meta.pomScmDevConnection = "scm:git@github.com:${meta.gitHubUsername}/${meta.pomArtifactId}.git"
+    meta.pomLicenseName = 'Apache Licence 2.0'
+    meta.pomLicenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0'
+    meta.pomLicenseDist = 'repo'
+    meta.pomDeveloperId = meta.gitHubUsername
+    meta.pomDeveloperName = meta.gitHubFullname
+    meta.pomDeveloperUrl = "http://github.com/${meta.gitHubUsername}"
+    meta.localRepositoryUrl = uri('.repo')
+    meta.pluginVcsurl = "https://github.com/${meta.gitHubUsername}/${meta.pomArtifactId}.git"
+    meta.pluginTags = []
+    meta.gradlePluginId = 'com.github.amaksoft.elasticlibs'
+    meta.propNameOssrhUsername = 'ossrhUsername'
+    meta.propNameOssrhPassword = 'ossrhPassword'
+}
