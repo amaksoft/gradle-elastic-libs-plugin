@@ -1,4 +1,4 @@
-# gradle-elastic-libs
+# gradle-elastic-libs [![Build Status](https://travis-ci.org/amaksoft/gradle-elastic-libs-plugin.svg?branch=master)](https://travis-ci.org/amaksoft/gradle-elastic-libs-plugin)
 
 Gradle plugin to easily switch between local project and repository artifacts of your libs for debugging.
 
