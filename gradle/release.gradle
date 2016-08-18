@@ -6,6 +6,11 @@ archivesBaseName = meta.pomArtifactId
 sourceCompatibility = meta.javaCompatibility
 targetCompatibility = meta.javaCompatibility
 
+// because hasProperty('property') ? project.getProperty('property') : "" didn't really work
+def getPropertyOpt = { String name ->
+    project.hasProperty(name) ? project.getProperty(name) : ""
+}
+
 // To release:
 // ./gradlew clean assemble uploadArchives -Prelease
 def isReleaseBuild
@@ -25,8 +30,8 @@ if (isReleaseBuild) {
     sonatypeRepositoryUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
 }
 
-def username = hasProperty(meta.propNameOssrhUsername) ? project.getProperty(meta.propNameOssrhUsername) : ""
-def password = hasProperty(meta.propNameOssrhPassword) ? project.getProperty(meta.propNameOssrhPassword) : ""
+def username = getPropertyOpt(meta.propNameOssrhUsername)
+def password = getPropertyOpt(meta.propNameOssrhPassword)
 
 install {
     repositories.mavenInstaller {
@@ -141,14 +146,13 @@ pluginBundle {
     }
 }
 
-
 bintray {
     // key and user must be in your ~/.gradle/gradle.properties
-    key          = hasProperty(meta.propNameBintrayKey) ? project.getProperty(meta.propNameBintrayKey) : ""
-    user         = hasProperty(meta.propNameBintrayUser) ? project.getProperty(meta.propNameBintrayUser) : ""
+    key          = getPropertyOpt(meta.propNameBintrayKey)
+    user         = getPropertyOpt(meta.propNameBintrayUser)
     dryRun       = false
     publish      = true
-    publications = [ 'mavenJava' ]
+    publications = [ 'plugin' ]
     pkg {
         repo            = 'maven'
         name            = meta.pomName
@@ -161,6 +165,10 @@ bintray {
         version {
             name       = meta.versionName
             desc       = meta.pomDescription
+            gpg {
+                sign = true
+                passphrase = getPropertyOpt(meta.propNameSignPass)
+            }
             attributes = [
                 'gradle-plugin': "${project.group}.${project.name - 'gradle-'}:${project.group}:${project.name}"
             ]

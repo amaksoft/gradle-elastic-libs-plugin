@@ -31,4 +31,5 @@ ext {
     meta.bintrayRepoName = 'maven'
     meta.propNameBintrayUser = 'bintrayUser'
     meta.propNameBintrayKey = 'bintrayKey'
+    meta.propNameSignPass = 'GPGSignpass'
 }
