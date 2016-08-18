@@ -3,8 +3,8 @@
 Gradle plugin to easily switch between local project and repository artifacts of your libs for debugging.
 
 ## Inspired by
-* [elastic-deps](https://github.com/pniederw/elastic-deps): elastic-deps by Peter Niederwieser
-* [gradle-elasticdependencies](https://github.com/stackmagic/gradle-elasticdependencies): gradle-elasticdependencies by Patrick Huber
+* [elastic-deps](https://github.com/pniederw/elastic-deps): elastic-deps by [Peter Niederwieser](https://github.com/pniederw/)
+* [gradle-elasticdependencies](https://github.com/stackmagic/gradle-elasticdependencies): gradle-elasticdependencies by [Patrick Huber](https://github.com/stackmagic)
 
 ## Usage
 
@@ -65,6 +65,10 @@ dependencies {
 }
 
 ```
+
+## Acknowledgements
+
+Also i would like to thank [Soichiro Kashima](https://github.com/ksoichiro) for making [gradle-plugin-template](https://github.com/ksoichiro/gradle-plugin-template) which saved me a lot of time
 
 ## License
 
