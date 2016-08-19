@@ -1,7 +1,7 @@
 // TODO Configure following values to fit your plugin description.
 ext {
     meta = [:]
-    meta.versionName = '0.0.1'
+    meta.versionName = '0.0.4'
     meta.group = 'com.github.amaksoft'
     meta.pomArtifactId = 'gradle-elastic-libs-plugin'
     meta.javaCompatibility = 1.7
@@ -29,6 +29,7 @@ ext {
     meta.propNameOssrhUsername = 'ossrhUsername'
     meta.propNameOssrhPassword = 'ossrhPassword'
     meta.bintrayRepoName = 'maven'
+    meta.bintrayLicences = [ 'Apache-2.0' ]
     meta.propNameBintrayUser = 'bintrayUser'
     meta.propNameBintrayKey = 'bintrayKey'
     meta.propNameSignPass = 'GPGSignpass'

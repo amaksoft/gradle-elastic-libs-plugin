@@ -157,7 +157,7 @@ bintray {
         repo            = 'maven'
         name            = meta.pomName
         desc            = meta.pomDescription
-        licenses        = meta.pomLicenseName
+        licenses        = meta.bintrayLicences
         websiteUrl      = meta.gitHubUrl
         vcsUrl          = meta.pluginVcsurl
         issueTrackerUrl = meta.issueTracker
