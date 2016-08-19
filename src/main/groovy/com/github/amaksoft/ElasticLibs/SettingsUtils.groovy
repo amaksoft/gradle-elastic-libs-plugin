@@ -22,7 +22,7 @@ class SettingsUtils {
         } else if (!isValidProjectDir(pathToDir)){
             println "Not including local project \"" + projectName + "\" (\"" + pathToDir + "\"). Local project doesn't exist."
         } else {
-            println "Not including local project \"" + projectName + "\" (\"" + pathToDir + "\"). Cancelled by with environment variable \"$envVarSwitch\""
+            println "Not including local project \"" + projectName + "\" (\"" + pathToDir + "\"). Cancelled with environment variable \"$envVarSwitch\""
         }
     }
 }
