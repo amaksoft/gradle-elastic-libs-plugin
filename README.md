@@ -1,4 +1,4 @@
-# gradle-elastic-libs [![Build Status](https://travis-ci.org/amaksoft/gradle-elastic-libs-plugin.svg?branch=master)](https://travis-ci.org/amaksoft/gradle-elastic-libs-plugin)
+# gradle-elastic-libs [![Build Status](https://travis-ci.org/amaksoft/gradle-elastic-libs-plugin.svg?branch=master)](https://travis-ci.org/amaksoft/gradle-elastic-libs-plugin) [ ![Download](https://api.bintray.com/packages/amaksoft/maven/gradle-elastic-libs-plugin/images/download.svg) ](https://bintray.com/amaksoft/maven/gradle-elastic-libs-plugin/_latestVersion)
 
 Gradle plugin to easily switch between local project and repository artifacts of your libs for debugging.
 
@@ -19,6 +19,15 @@ Here is an example:
 
 settings.gradle:
 
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.amaksoft:gradle-elastic-libs-plugin:0.0.5'
+    }
+}
+
 apply plugin: 'com.github.amaksoft.elasticlibs'
 
 // ...
@@ -35,6 +44,15 @@ includeIfValid ":YourLibTwo", "path/to/your/lib/two"
 
 
 build.gradle (ProjectOne):
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.amaksoft:gradle-elastic-libs-plugin:0.0.5'
+    }
+}
 
 // ...
 
