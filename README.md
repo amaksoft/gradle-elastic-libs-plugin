@@ -15,9 +15,10 @@ The idea is to validate if project exists before including it into a multi-proje
 The plugin adds `includeIfValid(String projectName, String projectPath)` method to settings.gradle and `compileElasticLib(String localProjectName, String mavenArtifactNotation, Object o)` to build.gradle dependencies extension.
 
 Here is an example:
-```groovy
+
 
 settings.gradle:
+```groovy
 
 buildscript {
     repositories {
@@ -47,9 +48,11 @@ includeIfValid ":YourLibOne", "path/to/your/lib/one"
 includeIfValid ":YourLibTwo", "path/to/your/lib/two"
 //includeIfValid ":YourLibThree", "path/to/your/lib/three"
 
+```
 
 build.gradle (ProjectOne):
 
+```groovy
 buildscript {
     repositories {
         jcenter()
