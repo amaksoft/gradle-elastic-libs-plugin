@@ -6,7 +6,7 @@ jdk:
 
 branches:
   only:
-    - master
+    - release
 
 script:
   - ./gradlew clean build check --full-stacktrace
