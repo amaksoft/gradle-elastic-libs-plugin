@@ -60,9 +60,9 @@ apply plugin: 'com.github.amaksoft.elasticlibs'
 
 // ...
 
-def versionLibOne = 1.1.1
-def versionLibTwo = 2.2.2
-def versionLibThree = 3.3.3
+def versionLibOne = "1.1.1"
+def versionLibTwo = "2.2.2"
+def versionLibThree = "3.3.3"
 
 dependencies {
     compileElasticLib ":YourLibOne", "com.example:lib_one:${versionLibOne}"
@@ -81,6 +81,12 @@ dependencies {
         }
     }
 }
+// Keep track of your elastic libs using HashMap elasticLibs
+HashMap<String, String> el = elasticLibs
+el.each {println "Used elastic lib ${it.key} = ${it.value}"}
+// Output:
+//     Used elastic lib :YourLibOne = com.example:lib_one:1.1.1
+//     Used elastic lib :YourLibTwo = com.example:lib_two:2.2.2
 
 ```
 
