@@ -25,7 +25,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.github.amaksoft:gradle-elastic-libs-plugin:0.0.5'
+        classpath 'com.github.amaksoft:gradle-elastic-libs-plugin:0.0.6'
     }
 }
 
@@ -58,7 +58,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.github.amaksoft:gradle-elastic-libs-plugin:0.0.5'
+        classpath 'com.github.amaksoft:gradle-elastic-libs-plugin:0.0.6'
     }
 }
 

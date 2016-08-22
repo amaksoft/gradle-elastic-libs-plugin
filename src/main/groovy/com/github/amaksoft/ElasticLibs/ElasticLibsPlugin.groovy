@@ -39,9 +39,20 @@ class ElasticLibsPlugin implements Plugin {
 
     def compileElasticLib(String libraryProjectName, String libraryMavenName, Object o = null) {
         elasticLibs.put(libraryProjectName, libraryMavenName)
-        if( projectExists(libraryProjectName) )
+        if( projectExists(libraryProjectName) ) {
             project.dependencies.compile project.project(libraryProjectName)
+            excludeTransitions project, libraryMavenName
+        }
         else if (o != null) project.dependencies.compile libraryMavenName, o
         else project.dependencies.compile libraryMavenName
+    }
+
+    static def excludeTransitions(Project project, String notation) {
+        String[] splitNotation = notation.split(":")
+        if ( splitNotation.length == 3 ) {
+            project.allprojects {
+                project.configurations.all*.exclude group: splitNotation[0], module: splitNotation[1]
+            }
+        }
     }
 }
