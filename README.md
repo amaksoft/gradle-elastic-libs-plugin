@@ -37,6 +37,11 @@ include ":ProjectTwo"
 
 // ...
 
+// Don't include local projects if environment variable exists ("JENKINS_URL" by default)
+envVarSwitch = "NO_LOCAL_PROJECTS"
+
+//...
+
 // include only if it is a valid project (directory exists and there is a build.gradle file in it)
 includeIfValid ":YourLibOne", "path/to/your/lib/one"
 includeIfValid ":YourLibTwo", "path/to/your/lib/two"
