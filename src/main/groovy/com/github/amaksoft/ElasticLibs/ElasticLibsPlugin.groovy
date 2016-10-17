@@ -34,13 +34,15 @@ class ElasticLibsPlugin implements Plugin {
     }
 
     boolean projectExists (String projectName) {
-        project.rootProject.allprojects.toListString().contains(projectName)
+        project.findProject(projectName) != null
     }
 
     def compileElasticLib(String libraryProjectName, String libraryMavenName, Object o = null) {
         elasticLibs.put(libraryProjectName, libraryMavenName)
         if( projectExists(libraryProjectName) ) {
-            project.dependencies.compile project.project(libraryProjectName)
+            def projectDep = project.project(libraryProjectName)
+            projectDep.group = "local.build"
+            project.dependencies.compile projectDep
             excludeTransitions project, libraryMavenName
         }
         else if (o != null) project.dependencies.compile libraryMavenName, o
